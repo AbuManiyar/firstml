@@ -1,16 +1,16 @@
 from setuptools import setup, find_packages
-from typing import List
+#from typing import List
 
 
 HED = "-e ."
-def get_requirements(file_path:str)->List[str]:
+def get_requirements(file_path:str):
     requirements = []
     with open(file_path) as file:
         requirements = file.readlines()
         requirements = [i.replace('\n', '') for i in requirements]
         if HED in requirements:
             requirements.remove(HED)
-    print(requirements,'\n','\n','\n','\n')        
+    #print(requirements,'\n','\n','\n','\n')        
     return requirements
 
 
