@@ -2,4 +2,6 @@ pandas
 numpy
 scikit-learn
 ipykernel
+catboost
+xgboost
 -e .
