@@ -2,7 +2,6 @@ import os
 import sys
 import pandas as pd
 import numpy as np
-import pickle
 from src.exception import CustomException
 import dill
 
