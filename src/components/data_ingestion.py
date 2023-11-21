@@ -20,10 +20,11 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
+            logging.info('Data loading started')
             df=pd.read_csv('notebook\data\stud.csv')
-            logging.info('Read the dataset as dataframe')
+            logging.info('Read the dataset as Dataframe')
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
+            os.makedirs('artifacts',exist_ok=True) # This makes sense
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
@@ -34,7 +35,7 @@ class DataIngestion:
 
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            logging.info("Inmgestion of the data iss completed")
+            logging.info("Ingestion of the data is completed")
 
             return(
                 self.ingestion_config.train_data_path,
