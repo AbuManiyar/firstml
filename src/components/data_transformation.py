@@ -6,6 +6,8 @@ from src.logger import logging
 from src.utils import save_object
 
 from src.components.data_ingestion import DataIngestion
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
 
 import pickle
 import pandas as pd
@@ -119,5 +121,8 @@ if __name__ == '__main__':
     train_data, test_data = obj.initiate_data_ingestion() 
     
     data_transformation = DataTransformation()
-    result = data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+    
+    model_training = ModelTrainer()
+    model_training.initiate_model_trainer(train_arr,test_arr)
   #'''    
