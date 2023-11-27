@@ -4,4 +4,6 @@ scikit-learn
 ipykernel
 catboost
 xgboost
+dvc
+mlflow
 -e .
